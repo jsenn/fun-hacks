@@ -32,8 +32,8 @@ def parse_words(infile):
 
 def next_word(followers, ending=False):
     """(dict, bool) -> str
-    Randomly return a word from followers, where the probability of a follower
-    to be returned is proportional to its count.
+    Randomly return a word from followers, where the probability of returning
+    a follower is proportional to its count.
     """
     if ending:
         try:
@@ -42,7 +42,7 @@ def next_word(followers, ending=False):
             return weighted_choice(endings)
         except AssertionError:
             pass
-
+    # If no ending is found, choose from the full list of followers
     return weighted_choice(followers)
 
 def weighted_choice(choices):
@@ -81,6 +81,7 @@ def generate_text(words, length=10):
     return output_text
 
 if __name__ == '__main__':
+    # File containing the training text
     infile = '<file_path>'
     words = parse_words(infile)
     print generate_text(words)
