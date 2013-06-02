@@ -79,6 +79,6 @@ def generate_text(words, length=10):
     return output_text
 
 if __name__ == '__main__':
-    infile = '/Users/johnsaccount/Documents/Programs/miscellany/nonsense_generator/big_list.txt'
+    infile = '<file_path>'
     words = parse_words(infile)
     print generate_text(words)
