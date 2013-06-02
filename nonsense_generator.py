@@ -47,6 +47,8 @@ def next_word(followers, ending=False):
 
 def weighted_choice(choices):
     """(dict) -> object
+    Adapted from:
+    stackoverflow.com/questions/3679694/a-weighted-version-of-random-choice
     """
     total = sum(choices[key] for key in choices)
     r = random.uniform(0, total)
