@@ -79,7 +79,7 @@ function next_gen(trees::Dict, funcs::Array, terms::Array)
     return new_pop
 end
 
-function weighted_choice(choices)
+function weighted_choice(choices::Dict{Any, FloatingPoint})
     total = sum([pair[2] for pair in choices])
     r = rand() * total
     upto = 0
